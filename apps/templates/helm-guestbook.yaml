@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: helm-guestbook
-  namespace: argocd
+  namespace: {{ .Values.metadata.argo-namespace }} 
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io   #per la rimozione corretta dell'app
 spec:
   destination:
     namespace: helm-guestbook
