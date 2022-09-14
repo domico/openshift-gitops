@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sync-waves
-  namespace: {{ .Values.metadata.argo-namespace }} 
+  namespace: {{ .Values.metadata.argonamespace }} 
   finalizers:
   - resources-finalizer.argocd.argoproj.io #per la rimozione corretta dell'app
 spec:
